@@ -8774,7 +8774,7 @@ textarea.form-control {
     .timeline > li > .timeline-panel {
       width: 43%;
       position: relative;
-      z-index: 0;
+      z-index: 1;
       background: #fff;
       padding: 30px; }
       .timeline > li > .timeline-panel:before {

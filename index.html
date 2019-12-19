@@ -21,7 +21,10 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		/* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%;} /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+	</style>
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -36,7 +39,7 @@
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#groom-bride-section" class="nav-link"><span>Bride &amp; Groom</span></a></li>
 	          <li class="nav-item"><a href="#lovestory-section" class="nav-link"><span>Love Story</span></a></li>
-	          <li class="nav-item"><a href="#greeting-section" class="nav-link"><span>Greetings</span></a></li>
+	          <!-- <li class="nav-item"><a href="#greeting-section" class="nav-link"><span>Greetings</span></a></li> -->
 	          <!-- <li class="nav-item"><a href="#people-section" class="nav-link"><span>People</span></a></li> -->
 	          <li class="nav-item"><a href="#when-where-section" class="nav-link"><span>When &amp; Where</span></a></li>
 	          <!-- <li class="nav-item"><a href="#rsvp-section" class="nav-link"><span>RSVP</span></a></li> -->
@@ -47,7 +50,9 @@
 	  </nav>
 
 	  <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(images/bg_1.jpg); background-size:cover; background-position: top center;" data-stellar-background-ratio="0.5">
-	  	<div class="overlay"></div>
+		  <div class="overlay"></div>
+
+			<!-- particles.js container --> <div id="particles-js"></div> <!-- stats - count particles -->
 			<!-- <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=Mjjw19B7rMk',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, quality:'default',optimizeDisplay:true}"></a> -->
 			<div class="container">
 				<div class="row js-fullheight justify-content-center d-flex align-items-center">
@@ -205,10 +210,21 @@
 			    	</ul>
         	</div>
         </div>
-   		</div>
-   	</section>
+		</div>
+	   </section>
+	   <section class="love-message bg-pink" >
+			<div class="container">
+				<div class="text-center heading-section wrap">
+					<h2>
+						<span>"</span>
+						Some love saying
+						<span>"</span>
+					</h2>
+				</div>
+			</div>
+		</section>
 
-   	<section class="ftco-section bg-light" id="greeting-section">
+   	<!-- <section class="ftco-section bg-light" id="greeting-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
           <div class="col-md-12 text-center heading-section ftco-animate">
@@ -293,7 +309,7 @@
           </div>
         </div>
     	</div>
-    </section>
+    </section> -->
 
     <!-- <section class="ftco-section" id="people-section">
     	<div class="container-fluid px-md-5">
@@ -472,6 +488,7 @@
     </section> -->
 
     <section class="ftco-section" id="gallery-section">
+		<canvas id="world" style="position: absolute"></canvas>
     	<div class="container-fluid px-md-4">
     		<div class="row justify-content-center pb-5">
           <div class="col-md-12 text-center heading-section ftco-animate">
@@ -524,7 +541,7 @@
     	</div>
     </section>
 
-  	<footer class="ftco-footer ftco-section">
+  	<footer class="ftco-footer ftco-section text-center">
     	<div class="overlay"></div>
       <!-- <div class="container">
         <div class="row mb-5">
@@ -590,7 +607,9 @@
 	            </div>
             </div>
           </div>
-        </div> -->
+		</div> -->
+		<div id="heart"></div>
+		<h3>Thank you</h3>
     </footer>
 
   <!-- loader -->
@@ -612,8 +631,128 @@
   <script src="js/scrollax.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
-
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+  <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
   <script src="js/main.js"></script>
 
+  <script>
+	particlesJS("particles-js", {"particles":{"number":{"value":82,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#ffffff"},"polygon":{"nb_sides":6},"image":{"src":"img/github.svg","width":1,"height":1}},"opacity":{"value":0.26456299004281125,"random":true,"anim":{"enable":true,"speed":0.5684540486109415,"opacity_min":0.14617389821424212,"sync":false}},"size":{"value":5,"random":false,"anim":{"enable":true,"speed":10,"size_min":40,"sync":false}},"line_linked":{"enable":false,"distance":593.2624625202434,"color":"#ffffff","opacity":1,"width":2.0844356791251797},"move":{"enable":true,"speed":1,"direction":"top","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"grab"},"onclick":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+  </script>
+  <script>
+	 (function () {
+  var COLORS, Confetti, NUM_CONFETTI, PI_2, canvas, confetti, context, drawCircle, i, range, resizeWindow, xpos;
+
+  NUM_CONFETTI = 350;
+
+  COLORS = [[85, 71, 106], [174, 61, 99], [219, 56, 83], [244, 92, 68], [248, 182, 70]];
+
+  PI_2 = 2 * Math.PI;
+
+  canvas = document.getElementById("world");
+
+  context = canvas.getContext("2d");
+
+  window.w = 0;
+
+  window.h = 0;
+
+  resizeWindow = function () {
+    window.w = canvas.width = window.innerWidth;
+    return window.h = canvas.height = window.innerHeight * 2;
+  };
+
+  window.addEventListener('resize', resizeWindow, false);
+
+  window.onload = function () {
+    return setTimeout(resizeWindow, 0);
+  };
+
+  range = function (a, b) {
+    return (b - a) * Math.random() + a;
+  };
+
+  drawCircle = function (x, y, r, style) {
+    context.beginPath();
+    context.arc(x, y, r, 0, PI_2, false);
+    context.fillStyle = style;
+    return context.fill();
+  };
+
+  xpos = 0.5;
+
+  document.onmousemove = function (e) {
+    return xpos = e.pageX / w;
+  };
+
+  window.requestAnimationFrame = function () {
+    return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+      return window.setTimeout(callback, 100000 / 6);
+    };
+  }();
+
+  Confetti = class Confetti {
+    constructor() {
+      this.style = COLORS[~~range(0, 5)];
+      this.rgb = `rgba(${this.style[0]},${this.style[1]},${this.style[2]}`;
+      this.r = ~~range(2, 6);
+      this.r2 = 2 * this.r;
+      this.replace();
+    }
+
+    replace() {
+      this.opacity = 0;
+      this.dop = 0.03 * range(1, 4);
+      this.x = range(-this.r2, w - this.r2);
+      this.y = range(-20, h - this.r2);
+      this.xmax = w - this.r;
+      this.ymax = h - this.r;
+      this.vx = range(0, 2) + 8 * xpos - 5;
+      return this.vy = 0.7 * this.r + range(-1, 1);
+    }
+
+    draw() {
+      var ref;
+      this.x += this.vx;
+      this.y += this.vy;
+      this.opacity += this.dop;
+      if (this.opacity > 1) {
+        this.opacity = 1;
+        this.dop *= -1;
+      }
+      if (this.opacity < 0 || this.y > this.ymax) {
+        this.replace();
+      }
+      if (!(0 < (ref = this.x) && ref < this.xmax)) {
+        this.x = (this.x + this.xmax) % this.xmax;
+      }
+      return drawCircle(~~this.x, ~~this.y, this.r, `${this.rgb},${this.opacity})`);
+    }};
+
+	confetti = function () {
+		var j, ref, results;
+		results = [];
+		for (i = j = 1, ref = NUM_CONFETTI; 1 <= ref ? j <= ref : j >= ref; i = 1 <= ref ? ++j : --j) {
+		results.push(new Confetti());
+		}
+		return results;
+	}();
+
+	window.step = function () {
+		var c, j, len, results;
+		requestAnimationFrame(step);
+		context.clearRect(0, 0, w, h);
+		results = [];
+		for (j = 0, len = confetti.length; j < len; j++) {
+		c = confetti[j];
+		results.push(c.draw());
+		}
+		return results;
+	};
+
+	step();
+
+	}).call(this);
+
+	</script>
   </body>
 </html>

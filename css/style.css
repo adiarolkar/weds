@@ -9782,6 +9782,8 @@ textarea.form-control {
 
 .love-message {
   padding: 7rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 #heart {
@@ -9864,4 +9866,28 @@ footer h3 {
 
 .maps {
   width: 100%;
+}
+
+.logo {
+  background: url('../images/logo/a-p-logo-red.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 80px;
+}
+
+.logo:hover {
+  background: url('../images/logo/a-p-logo-white.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ftco-navbar-light.scrolled .navbar-brand {
+  padding: .5rem 0;
+}
+
+.navbar.scrolled .logo:hover {
+  background: url('../images/logo/a-p-logo-black.png');
+  background-repeat: no-repeat;
+  background-size: contain;
 }

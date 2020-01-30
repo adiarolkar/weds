@@ -78,6 +78,18 @@
 	    });
 		});
 
+		$(document).on('click', '#map-dir a[href^="#"]', function (event) {
+			event.preventDefault();
+
+			var href = $.attr(this, 'href');
+
+			$('html, body').animate({
+				scrollTop: $($.attr(this, 'href')).offset().top - 90
+			}, 300, function() {
+				// window.location.hash = href;
+			});
+		});
+
 	};
 
 	onePageClick();

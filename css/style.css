@@ -9781,7 +9781,7 @@ textarea.form-control {
 }
 
 .love-message {
-  padding: 7rem 0;
+  padding: 5rem 0;
   position: relative;
   z-index: 1;
 }
@@ -9890,4 +9890,8 @@ footer h3 {
   background: url('../images/logo/a-p-logo-black.png');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.heading-section h2.saying {
+  font-size: 60px;
 }

@@ -231,10 +231,9 @@
 	   <section class="love-message bg-pink" >
 			<div class="container">
 				<div class="text-center heading-section wrap">
-					<h2>
+					<h2 class="saying">
 						<span>"</span>
-						Some love saying
-						<span>"</span>
+						The best love is the kind that awakens the soul and makes us reach for more, that plants a fire in our hearts and brings peace to our minds.<span>"</span>
 					</h2>
 				</div>
 			</div>
@@ -425,7 +424,7 @@
           </div>
         </div>
         <div class="row" id="map-dir">
-        	<div class="col-md-4 offset-md-2 ftco-animate">
+        	<div id="ceremony" class="col-md-4 offset-md-2 ftco-animate">
         		<div class="place img" style="background-image: url(images/place-2.jpg);">
         			<div class="text text-center">
 	        			<span class="icon flaticon-wedding-kiss"></span>
@@ -436,7 +435,7 @@
 	        		</div>
         		</div>
         	</div>
-        	<div class="col-md-4 ftco-animate">
+			<div id="reception" class="col-md-4 ftco-animate">
         		<div class="place img" style="background-image: url(images/place-1.jpg);">
         			<div class="text text-center">
 	        			<span class="icon flaticon-reception-bell"></span>
@@ -995,6 +994,9 @@
 				var node = document.querySelector('[title="Hosted on free web hosting 000webhost.com. Host your own website for FREE."]');
 				node.style.display = "none";
 			}, 100);
+
+			$("#ceremony").toggle(document.URL.indexOf("ceremony=true") !== -1);
+			!(document.URL.indexOf("ceremony=true") !== -1) && document.getElementById('reception').classList.add('offset-md-4');
 		})
 			// const playPromise = audio.play();
 			// if (playPromise !== null){

@@ -8652,6 +8652,10 @@ textarea.form-control {
   text-transform: uppercase;
   font-family: "Libre Caslon Text", serif; }
 
+  .ftco-about .subheading.header {
+    color: #f67e7d;
+  }
+
 .ftco-about h2 {
   font-size: 64px;
   color: #f67e7d;
@@ -8727,7 +8731,7 @@ textarea.form-control {
 .bg-section {
   position: relative;
   z-index: 0;
-  padding: 14em 0 !important; }
+  padding: 14em 0 19em!important; }
   .bg-section .overlay-top {
     position: absolute;
     top: 0;
@@ -9869,15 +9873,21 @@ footer h3 {
 }
 
 .logo {
-  background: url('../images/logo/a-p-logo-red.png');
+  background: url('../images/logo/a-p-logo-white.png');
   background-repeat: no-repeat;
   background-size: contain;
   width: 100px;
   height: 80px;
 }
 
+.awake .logo {
+  background: url('../images/logo/a-p-logo-red.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .logo:hover {
-  background: url('../images/logo/a-p-logo-white.png');
+  background: url('../images/logo/a-p-logo-red.png');
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -9894,4 +9904,18 @@ footer h3 {
 
 .heading-section h2.saying {
   font-size: 60px;
+}
+
+.timeline-body {
+  font-size: 16px;
+}
+
+#timer.fin span {
+	margin: auto;
+	font-size: 30px;
+	color: white;
+}
+
+.f-15 {
+  font-size:15px;
 }

@@ -315,7 +315,7 @@
 
 	function makeTimer() {
 
-		var endTime = new Date("17 May 2020 16:40:00 GMT+05:30");
+		var endTime = new Date("11 December 2020 12:00:00 GMT+05:30");
 		endTime = (Date.parse(endTime) / 1000);
 
 		var now = new Date();
@@ -338,7 +338,7 @@
 			$("#minutes").html(minutes + "<span>Minutes</span>");
 			$("#seconds").html(seconds + "<span>Seconds</span>");
 		} else {
-			$("#days").html("<span>We are Married</span>");
+			$("#timer").html("<span>We are Married!!</span>").addClass('fin');
 		}
 }
 
